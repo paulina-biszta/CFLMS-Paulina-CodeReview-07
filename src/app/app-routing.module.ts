@@ -7,6 +7,7 @@ import { PostComponent } from './post/post.component';
 import { TravelsComponent } from './travels/travels.component';
 import { TravelComponent } from './travel/travel.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,8 @@ const routes: Routes = [
   path: 'offers/:oId', component: TravelComponent
 },{
   path: 'cart', component: CartComponent
+},{
+  path: 'contact', component: ContactComponent
 }
 ];
 

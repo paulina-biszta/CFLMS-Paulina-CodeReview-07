@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -13,12 +13,14 @@ export class CartComponent implements OnInit {
   itemsPrice: number = 0;
   fullCart: boolean;
 
-  constructor(private cartService: CartService, private formBuilder: FormBuilder) {this.checkoutForm = this.formBuilder.group({
-    fname: '',
-    lname: '',
-    address: '',
-    phone: ''
-  }); }
+  constructor(private cartService: CartService, private formBuilder: FormBuilder) {
+    this.checkoutForm = this.formBuilder.group({
+fname: ['', Validators.required],
+lname: ['', Validators.required],
+address: ['', Validators.required],
+phone: ['', Validators.required]
+});
+}
 
     ngOnInit() {
       this.items = this.cartService.getItems();
@@ -40,6 +42,18 @@ export class CartComponent implements OnInit {
         this.itemsPrice = this.itemsPrice * 0.8;
         this.totalCost = `(20% discount): ${this.itemsPrice} €`;
       }
+    }
+    onSubmit(customerData) {
+      // Process checkout data here
+      if(this.checkoutForm.valid){
+        var a = this.checkoutForm.value;
+        alert('Your order has been submitted')
+        this.items = this.cartService.clearCart();
+        this.checkoutForm.reset();
+        window.location.href = "index.html"
+     }else{
+       alert('All fields reqiured')
+     }
     }
   }
     

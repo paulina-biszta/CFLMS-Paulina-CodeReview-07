@@ -12,6 +12,7 @@ import { PostComponent } from './post/post.component';
 import { TravelComponent } from './travel/travel.component';
 import { CartComponent } from './cart/cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PostComponent,
     TravelComponent,
     CartComponent,
+    FooterComponent,
     
   ],
   imports: [
