@@ -13,9 +13,9 @@ export class TravelComponent implements OnInit {
   o;
 
   constructor(private route: ActivatedRoute, private cartService: CartService) { }
-  addToCart(o) {
+  addToCart(offers) {
     window.alert('Your product has been added to the cart!');
-    this.cartService.addToCart(o);
+    this.cartService.addToCart(offers);
   }
 
   ngOnInit() {
