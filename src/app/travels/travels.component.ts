@@ -3,7 +3,7 @@ import { offers } from '../offers';
 
 
 @Component({
-  selector: 'app-travels',
+  selector: 'travels',
   templateUrl: './travels.component.html',
   styleUrls: ['./travels.component.css']
 })
